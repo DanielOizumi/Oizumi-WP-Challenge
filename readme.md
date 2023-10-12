@@ -17,7 +17,7 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 2. **Start Docker Compose**
     Open your terminal, navigate to the project directory, and run the following command to start the Docker Compose environment:
     
-    ```shell
+    ```
     docker-compose up -d
     ```
 
@@ -31,13 +31,13 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
    
     a. Open a new terminal, and access the WordPress container by running the following command:
     
-    ```shell
+    ```
     docker-compose exec wordpress /bin/bash
     ```
     
     b. Once you're inside the container, use the mysql command to import the database:
 
-    ```shell
+    ```
     mysql -u wordpress -pwordpress wordpress < /var/www/html/wordpress.sql
     ```
 
@@ -55,7 +55,7 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 6. **Cleanup**
     When you're done working on your WordPress site, you can stop and remove the Docker containers by running:
    
-    ```shell
+    ```
     docker-compose down -v
     ```
 ## Error establishing a database connection
@@ -67,7 +67,7 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 
 * If that still doesn't work, please go to `oizumi/wp-content/themes/oizumi/assets` and run:
 
-    ```shell
+    ```
     npm install 18
     npm install gulp
     gulp
@@ -77,6 +77,6 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 
 * If you have permission errors when uploading images or plugins, please run the following code from the root directory of this project:
 
-    ```shell
+    ```
     sudo chown --recursive --changes www-data:www-data oizumi/wp-content
     ```
