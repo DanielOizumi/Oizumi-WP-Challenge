@@ -25,34 +25,15 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
    
     Docker Compose will pull the necessary images and start the containers. Wait a minute or two for the process to complete.
 
-4. **Import WordPress Database**
-   
-    Docker Compose should import the database when running `docker-compose up -d` but in case it doesn't, please proceed.
-   
-    a. Open a new terminal, and access the WordPress container by running the following command:
-    
-    ```
-    docker-compose exec wordpress /bin/bash
-    ```
-    
-    b. Once you're inside the container, use the mysql command to import the database:
 
-    ```
-    mysql -u wordpress -pwordpress wordpress < /var/www/html/wordpress.sql
-    ```
-
-    You'll be prompted to enter the password, which is "wordpress."
-
-    c. Exit the container by typing `exit`.
-
-5. **Access the WordPress Site**
+4. **Access the WordPress Site**
    
     After completing the setup and importing the database, you can access your WordPress site by navigating to [http://localhost](http://localhost) in your web browser.
     To access the administrator panel, [http://localhost/admin](http://localhost/admin) and use the following credentials.
     Username: admin
     Password: admin
 
-6. **Cleanup**
+5. **Cleanup**
     When you're done working on your WordPress site, you can stop and remove the Docker containers by running:
    
     ```
