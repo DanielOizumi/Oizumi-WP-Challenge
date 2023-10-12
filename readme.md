@@ -55,15 +55,15 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 If the site does not present any content, please make sure that the oizumi theme and ACF are activated.
 
 If that still not working, please go to ```oizumi/wp-content/themes/oizumi/assets``` and run
-```bash
-npm install 18
-npm install gulp
-gulp
-```
+    ```bash
+    npm install 18
+    npm install gulp
+    gulp
+    ```
 
 ## Fix Permission Error
 
-If you have permission errors when uploading images or plugins, please run the following code from the root directory of this project:
+    If you have permission errors when uploading images or plugins, please run the following code from the root directory of this project:
     ```bash
     sudo chown --recursive --changes www-data:www-data oizumi/wp-content
     ```
