@@ -1,0 +1,138 @@
+/*
+  Project Styles
+  --------------
+  This CSS file defines styles for various elements used in the project. It includes
+  mixins for layout and common styling, button styles, text links, tags, and highlights.
+
+  Styles:
+  - Wrapper: Layout mixin for creating centered content with padding.
+  - Buttons: Mixins and classes for creating various types of buttons.
+  - Arrow Button: Styles for arrow buttons with different color variations.
+  - Text Link: Mixin and class for creating text links with hover effects.
+  - Tags: Mixin and class for creating styled tags.
+  - Highlights: Styles for text highlights with different color options.
+
+  Note:
+  - Some styles may depend on pre-defined variables and mixins.
+  - Additional styles specific to components or pages may be defined elsewhere.
+*/
+
+/* -----------------------------------------------------------------------------
+ * Wrapper
+ * ----------------------------------------------------------------------------- */
+@mixin wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $mobile-bleed;
+  padding-right: $mobile-bleed;
+
+  @include for-bp("desktop-lg") {
+    padding-left: $desktop-bleed;
+    padding-right: $desktop-bleed;
+  }
+
+  @include for-bp("desktop-xlg") {
+    padding-left: $desktop-lg-bleed;
+    padding-right: $desktop-lg-bleed;
+  }
+}
+
+.oizumi-wrapper {
+  @include wrapper;
+  padding-top: 9.5rem;
+
+  @include for-bp("desktop-sm") {
+    padding-top: 10.1rem;
+  }
+
+  &.center {
+    text-align: center;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Buttons
+ * ----------------------------------------------------------------------------- */
+@mixin a-btn() {
+  @include header-btn();
+
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 8px;
+  border: 0;
+  width: auto;
+  text-decoration: none;
+
+  padding: 0px 1.2rem;
+  height: 2.6rem;
+
+  @include for-bp("desktop-sm") {
+    padding: 0.7rem 3.3rem;
+    height: auto;
+  }
+}
+
+.btn-blue {
+  @include a-btn;
+  color: get-color("white");
+  background: get-color("light-blue");
+  white-space: nowrap;
+
+  &:hover {
+    color: get-color("white");
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * TEXT LINK
+ * ----------------------------------------------------------------------------- */
+a {
+  text-decoration: none;
+  color: get-color("dark-blue");
+
+  &:hover {
+    color: get-color("light-blue");
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * LIST BULLETS
+ * ----------------------------------------------------------------------------- */
+ul {
+  list-style-type: none;
+
+  li {
+    position: relative;
+    padding-left: 2.7rem;
+    line-height: 60.8%;
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    &:before {
+      content: "";
+      background-image: url("#{$assetsFolder}/icons/bullets.svg");
+      background-size: contain;
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      transform: translateY(-50%);
+    }
+  }
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Homepage Title
+ * ----------------------------------------------------------------------------- */
+body.home article header {
+  display: none;
+}
+
+/* -----------------------------------------------------------------------------
+ * Admin Bar
+ * ----------------------------------------------------------------------------- */
+html #wpadminbar {
+  display: none;
+}

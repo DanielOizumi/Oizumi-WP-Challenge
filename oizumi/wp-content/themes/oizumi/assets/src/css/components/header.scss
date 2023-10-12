@@ -1,0 +1,106 @@
+header.oizumi-header {
+  @include wrapper;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background: get-color("white");
+  top: 0;
+  left: 0;
+
+  .header-main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo {
+      .logo {
+        display: flex;
+        justify-content: center;
+
+        .desktop-logo {
+          display: none;
+        }
+
+        @include for-bp("desktop-sm") {
+          .mobile-logo {
+            display: none;
+          }
+
+          .desktop-logo {
+            display: block;
+            max-width: 204px;
+          }
+        }
+      }
+    }
+
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+
+      @include for-bp("desktop-sm") {
+        gap: 1.7rem;
+      }
+    }
+
+    .header-mobile-button {
+      button {
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        .toggle-close {
+          display: none;
+        }
+      }
+    }
+
+    .header-nav {
+      display: none;
+    }
+
+    @include for-bp("desktop-sm") {
+      display: flex;
+      height: 10.1rem;
+
+      .header-logo {
+        order: 1;
+      }
+
+      .header-buttons {
+        order: 3;
+      }
+
+      .header-mobile-button {
+        display: none;
+      }
+
+      .header-nav {
+        order: 2;
+      }
+    }
+  }
+
+  &.blurred {
+    .header-nav {
+      z-index: -1;
+      background: linear-gradient(105deg, #EDEBF9 2.98%, rgba(255, 255, 255, 0.40) 101.73%);
+      backdrop-filter: blur(8px);
+    }
+  }
+
+  @include for-bp("desktop-sm") {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 10.1rem;
+  }
+}
+
+//  transition: all 0.2s ease-in-out;

@@ -1,0 +1,6 @@
+#ignore mysql folder
+/mysql/
+
+# Ignore everything in the oizumi folder except the "wp-content" directory.
+/oizumi/*
+!/oizumi/wp-content/

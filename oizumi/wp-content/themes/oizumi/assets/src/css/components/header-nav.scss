@@ -1,0 +1,165 @@
+nav.header-nav {
+  padding: 2.4rem $mobile-bleed;
+
+  grid-column: 1 / span 3;
+  width: 100%;
+  height: calc(100% - 9.5rem);
+  position: fixed;
+  left: 0;
+  top: 9.5rem;
+  overflow-y: scroll;
+
+  .header-nav-wrapper {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding-left: 0;
+        margin: 0;
+        border-top: 0.1rem solid get-color("transparent-blue");
+
+        &:first-of-type {
+          border-top: 0;
+        }
+
+        a {
+          @include primary-typography();
+          display: block;
+          padding: 0.8rem 0;
+
+          @include for-bp("desktop-sm") {
+            @include primary-typography(get-size("medium"), 400);
+          }
+        }
+
+        &:before {
+          display: none;
+        }
+
+        &.is-active {
+          a {
+            color: get-color("light-blue");
+          }
+        }
+
+        @include for-bp("desktop-sm") {
+          display: inline-block;
+          border-top: 0;
+          padding: 0 0.4rem;
+
+        }
+      }
+    }
+
+    &>ul>li {
+      @include for-bp("desktop-sm") {
+        border-bottom: 0.3rem solid transparent;
+
+        a {
+          padding-right: 3.6rem;
+          height: 100px;
+          display: flex;
+          align-items: center;
+        }
+
+        &:hover {
+          border-bottom: 0.3rem solid get-color("light-blue");
+        }
+
+        &.is-active {
+          border-bottom: 0.3rem solid get-color("light-blue");
+        }
+      }
+    }
+
+    &.can-toggle {
+      li {
+        .has-children {
+          position: relative;
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 7px;
+            background: url("#{$assetsFolder}/icons/chevron_down.svg");
+            background-size: cover;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0);
+            transition: 100ms;
+          }
+        }
+
+        .sub-nav-container {
+          display: none;
+          padding-left: 2.4rem;
+          padding-bottom: 1.8rem;
+
+          ul {
+            li {
+              border-top: 0;
+            }
+
+            a {
+              @include primary-typography(get-size("smaller"));
+              padding: 0;
+
+              @include for-bp("desktop-sm") {
+                @include primary-typography(get-size("medium"), 400);
+              }
+            }
+
+            @include for-bp("desktop-sm") {
+              display: flex;
+              gap: 1.7rem;
+            }
+          }
+
+          @include for-bp("desktop-sm") {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(105deg, #EDEBF9 2.98%, rgba(255, 255, 255, 0.40) 101.73%);
+            backdrop-filter: blur(8px);
+            top: 10.1rem;
+            padding: 0 10.1rem 2.4rem 10.1rem;
+          }
+        }
+
+        &.is-open {
+          &>a {
+            color: get-color("light-blue");
+
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
+
+          .sub-nav-container {
+            @include for-bp("desktop-sm") {
+              opacity: 1;
+            }
+          }
+
+          @include for-bp("desktop-sm") {
+            position: static;
+          }
+        }
+      }
+    }
+  }
+
+  @include for-bp("desktop-sm") {
+    padding: 0 1.7rem;
+    height: auto;
+    position: initial;
+    overflow-y: initial;
+    display: flex !important;
+    justify-content: end;
+    gap: 1.7rem;
+  }
+}

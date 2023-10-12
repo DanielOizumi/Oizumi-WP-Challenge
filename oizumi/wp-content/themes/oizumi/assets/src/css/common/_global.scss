@@ -1,0 +1,43 @@
+/*
+  Global CSS Styles
+  ------------------
+  This CSS file contains styles for the project. It defines the base styles for
+  HTML elements, sets up responsive font sizing, and ensures consistent box sizing
+  for all elements. Additionally, it applies styles to the body, images, objects,
+  iframes, and embeds.
+
+  Styles:
+  - HTML: Base styles for the HTML element.
+  - *: Apply box-sizing: border-box to all elements.
+  - Body: Define font size for the body element.
+  - Images, Objects, Iframes, Embeds: Ensure responsive max-width for media elements.
+  
+  Note:
+  - Some styles may depend on pre-defined variables or other parts of the project.
+  - Additional styles specific to components or pages may be defined in separate files.
+*/
+
+html {
+  font-size: 62.5%; // Thanks! https://kittygiraudel.com/2013/03/18/the-ultimate-px-rem-mixin/
+  margin: 0;
+  overflow-x: hidden;
+  font-display: swap;
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: get-size("regular");
+}
+
+img,
+object,
+iframe,
+embed {
+  max-width: 100%;
+}

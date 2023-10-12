@@ -1,0 +1,17 @@
+.home {
+  .oizumi_paragraph {
+    @include primary-typography(get-size("regular"), 700, 100%);
+    color: get-color("light-gray");
+    margin: 2.4rem 0;
+    height: 12.3rem;
+
+    @include for-bp("tablet-gb") {
+      @include secondary-typography(get-size("smaller"), 600);
+      margin: 4.8rem auto;
+      width: 75.8rem;
+      height: auto;
+      text-align: center;
+
+    }
+  }
+}

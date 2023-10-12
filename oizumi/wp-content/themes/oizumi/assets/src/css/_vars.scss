@@ -1,0 +1,82 @@
+/*
+  Project Variables
+  -----------------
+  This file contains global variables and settings for the project, including file paths,
+  colors, responsive design breakpoints, Z-indexes, measures, time-related settings, and fonts.
+
+  Note:
+  - These variables provide a centralized way to manage project-wide settings.
+  - Adjust as needed to maintain consistency and meet project requirements.
+*/
+
+// Folders
+$assetsFolder: "/wp-content/themes/oizumi/assets/dist/assets";
+$imgsFolder: "/wp-content/themes/oizumi/assets/src/assets";
+$webfontsFolder: "#{$imgsFolder}/fonts";
+
+// Colors
+$colors: (
+  "transparent-blue": rgba(99, 113, 244, 0.40),
+  "dark-blue": #251F6E,
+  "light-blue": #6371F4,
+  "cobalt-blue": #8A94F7,
+  "light-gray": #848484,
+  "gray": #797979,
+  "dark-gray": #474747,
+  "black": #000000,
+  "white": #ffffff,
+);
+
+// Responsive Design Breakpoints
+$media-query-breakpoints: (
+  mobile-xs: 320px,
+  mobile-sm: 375px,
+  mobile-md: 425px,
+  mobile-lg: 620px,
+  tablet-switch: 720px,
+  tablet-sm: 768px,
+  tablet-gb: 782px,
+  tablet-md: 840px,
+  tablet-lg: 992px,
+  tablet-xl: 1012px,
+  desktop-sm: 1180px,
+  desktop-md: 1240px,
+  desktop-lg: 1300px,
+  desktop-xlg: 1920px,
+);
+
+// Z-indexes
+$z-index: (
+  tooltip: 6000,
+  modal: 5000,
+  nav: 2000,
+  stickyheader: 1000,
+  content: 500,
+);
+
+// Measures
+$mobile-bleed: 1.6rem;
+$tablet-bleed: 2.4rem;
+$desktop-bleed: 9.0rem;
+$desktop-lg-bleed: 19.2rem;
+
+// Time
+$transTime: 300ms;
+
+// Fonts
+$font-primary: "Dongle", sans-serif;
+$font-secondary: "Inter", sans-serif;
+
+// Sizes (Mainly for fonts)
+// How come rem instead of px? https://kittygiraudel.com/2013/03/18/the-ultimate-px-rem-mixin/
+$sizes: (
+  "tiny": 1.6rem, // mobile description
+  "smaller": 1.8rem, // mobile submenu & btn, desktop description
+  "small": 2.0rem, // mobile submenu & btn, desktop description
+  "regular": 2.4rem, // mobile menu & text, desktop btn
+  "medium": 3.2rem, // mobile h3, desktop menu & text
+  "big": 4.2rem, // mobile h2
+  "bigger": 4.8rem, // desktop h3
+  "xl": 6.4rem, // desktop h2 (hero)
+  "xxl": 9.6rem, // desktop h2
+);

@@ -1,0 +1,8 @@
+@use "sass:map";
+
+@function get-size($size-name) {
+  @return map-get($sizes, $size-name);
+}
+
+// use "get-sizes" like this:
+// font-size: get-size("regular");

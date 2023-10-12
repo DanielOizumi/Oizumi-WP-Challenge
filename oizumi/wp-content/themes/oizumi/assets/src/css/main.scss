@@ -1,0 +1,42 @@
+/*
+  Main Styles Entry
+  ----------------
+  This is the main SCSS entry file that imports various SCSS modules required for the project.
+  It includes global variables, responsive design mixins, color definitions, and common styles.
+  Additionally, it imports any 'shame.scss' file, which may contain quick fixes or non-ideal code.
+
+  Note:
+  - This file serves as the entry point for building your project's styles.
+  - Ensure that all required styles are imported and organized appropriately.
+*/
+
+// Global Variables
+@import "_wp.scss";
+@import "_vars.scss";
+
+// Mixins and Color and Sizes
+@import "mixins/_rwd.scss";
+@import "mixins/_colors.scss";
+@import "mixins/_sizes.scss";
+
+// Common Styles
+@import "common/_normalize.scss";
+@import "common/_webfonts.scss";
+@import "common/_global.scss";
+@import "common/_typography.scss";
+@import "common/_helpers.scss";
+
+// Quick Fixes or Non-Ideal Code (Use Sparingly)
+@import "_shame.scss";
+
+// components
+@import "components/skip-main.scss";
+@import "components/header.scss";
+@import "components/header-nav.scss";
+@import "components/footer.scss";
+@import "components/footer-nav.scss";
+
+@import "components/hero.scss";
+@import "components/heading.scss";
+@import "components/custom-paragraph.scss";
+@import "components/homepage-carousel.scss";

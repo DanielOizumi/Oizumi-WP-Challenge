@@ -1,0 +1,122 @@
+footer.oizumi-footer {
+  @include wrapper;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  margin-top: 6.8rem;
+  background-color: get-color("black");
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+
+  .footer-nav {
+    width: 100%;
+
+    @include for-bp("desktop-sm") {
+      order: 1;
+    }
+  }
+
+  .footer-content {
+    @include primary-typography(get-size("smaller"), 400, 133.333%);
+    color: get-color("white");
+    font-feature-settings: "clig" off, "liga" off;
+    text-transform: capitalize;
+
+    p {
+      margin: 0;
+    }
+
+    @include for-bp("desktop-sm") {
+      @include primary-typography(get-size("regular"), 400, 150%);
+      order: 3;
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    align-self: stretch;
+    align-items: center;
+    margin: 0;
+
+    .social-icon {
+      line-height: 0%;
+
+      a {
+        line-height: 0%;
+      }
+    }
+
+    @include for-bp("desktop-sm") {
+      order: 2;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    align-self: stretch;
+    margin-bottom: 6.2rem;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 0;
+        margin-top: 1.2rem;
+
+        a {
+          @include primary-typography(get-size("regular"), 700, 102.2%);
+          color: get-color("cobalt-blue");
+          font-feature-settings: "clig" off, "liga" off;
+          text-transform: capitalize;
+
+          @include for-bp("desktop-sm") {}
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:before {
+          display: none;
+        }
+
+        @include for-bp("desktop-sm") {
+          line-height: auto;
+          margin-top: 0;
+        }
+      }
+
+      @include for-bp("desktop-sm") {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3.6rem;
+      }
+    }
+
+    @include for-bp("desktop-sm") {
+      order: 4;
+      margin-bottom: 0;
+    }
+  }
+
+  @include for-bp("desktop-sm") {
+    gap: 4.8rem;
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    margin-top: 12.9rem;
+  }
+}

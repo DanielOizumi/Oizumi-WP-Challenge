@@ -1,0 +1,91 @@
+/*
+  Typography and Text Styles
+  --------------------------
+  This CSS file defines typography and text-related styles for the project. It includes mixins
+  and classes for defining font sizes, font weights, line heights, and other text properties.
+
+  Note:
+  - Some styles may depend on pre-defined variables and mixins.
+  - Additional text styles may be defined in separate files or components.
+*/
+
+@mixin primary-typography($size: get-size("regular"), $weight: 700, $height: normal) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+@mixin secondary-typography($size: get-size("regular"), $weight: 400, $height: normal) {
+  font-family: $font-secondary;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+/* Blue Button Styles */
+/* #region Blue Button */
+@mixin header-btn() {
+  @include primary-typography(get-size("smaller"), 400);
+
+  @include for-bp("desktop-sm") {
+    @include primary-typography(get-size("regular"), 400);
+  }
+}
+/* #endregion */
+
+/* Headline Styles */
+/* #region Headlines */
+@mixin oizumi_headline-big() {
+  @include primary-typography(get-size("big"), 700, 100%);
+
+  @include for-bp("desktop-sm") {
+    @include primary-typography(get-size("xxl"), 700, 60.8%);
+  }
+}
+
+@mixin oizumi_headline-medium() {
+  @include primary-typography(get-size("big"), 700, 100%);
+
+  @include for-bp("desktop-sm") {
+    @include primary-typography(get-size("xl"), 700, 80%);
+  }
+}
+
+@mixin oizumi_headline-small() {
+  @include primary-typography(get-size("medium"), 700, 60.8%);
+
+  @include for-bp("desktop-sm") {
+    @include primary-typography(get-size("bigger"), 700, 60.8%);
+  }
+}
+/* #endregion */
+
+/* Paragraph Styles */
+/* #region Paragraphs */
+@mixin oizumi_paragraph-big() {
+  @include primary-typography(get-size("regular"), 700, 100%);
+
+  @include for-bp("desktop-sm") {
+    @include primary-typography(get-size("medium"), 700, 112.5%);
+  }
+}
+
+@mixin oizumi_paragraph-medium() {
+  @include primary-typography(get-size("regular"), 700, 100%);
+
+  @include for-bp("desktop-sm") {
+    @include secondary-typography(get-size("smaller"), 600);
+  }
+}
+
+@mixin oizumi_paragraph-small() {
+  @include primary-typography(get-size("tiny"), 400);
+
+  @include for-bp("desktop-sm") {
+    @include secondary-typography(get-size("smaller"), 400);
+  }
+}
+/* #endregion */

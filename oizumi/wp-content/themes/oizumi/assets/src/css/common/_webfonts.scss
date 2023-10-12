@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Dongle";
+  src: local("Dongle Regular"), local("Dongle-Regular"),
+      url("#{$webfontsFolder}/Dongle/Dongle-Regular.woff2") format("woff2"),
+      url("#{$webfontsFolder}/Dongle/Dongle-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dongle";
+  src: local("Dongle Bold"), local("Dongle-Bold"),
+      url("#{$webfontsFolder}/Dongle/Dongle-Bold.woff2") format("woff2"),
+      url("#{$webfontsFolder}/Dongle/Dongle-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter Regular"), local("Inter-Regular"),
+      url("#{$webfontsFolder}/Inter/Inter-Regular.woff2") format("woff2"),
+      url("#{$webfontsFolder}/Inter/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter SemiBold"), local("Inter-SemiBold"),
+      url("#{$webfontsFolder}/Inter/Inter-SemiBold.woff2") format("woff2"),
+      url("#{$webfontsFolder}/Inter/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,19 @@
+.home {
+  .oizumi-block-heading {
+    h2 {
+      @include primary-typography(get-size("big"), 700, 100%);
+      color: get-color("dark-blue");
+      margin: 9.7rem 0 0 0;
+
+      @include for-bp("tablet-gb") {
+        @include primary-typography(get-size("xxl"), 700, 60.8%);
+        text-align: center;
+        margin-top: -7rem;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}

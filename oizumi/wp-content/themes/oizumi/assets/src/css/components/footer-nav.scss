@@ -1,0 +1,159 @@
+nav.footer-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding-left: 0;
+      margin: 0.4rem 0;
+
+      a {
+        @include primary-typography(get-size("medium"), 700, 102.2%);
+        display: block;
+        color: get-color("cobalt-blue");
+        font-feature-settings: "clig" off, "liga" off;
+        text-transform: capitalize;
+
+        @include for-bp("desktop-sm") {
+          @include primary-typography(get-size("bigger"), 700, 102.2%);
+        }
+      }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      @include for-bp("desktop-sm") {
+        margin: 0;
+      }
+    }
+
+    @include for-bp("desktop-sm") {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+  }
+
+  &.can-toggle {
+    li {
+      .has-children {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 12px;
+          height: 7px;
+          background: url("#{$assetsFolder}/icons/chevron_down.svg");
+          background-size: cover;
+          right: 6px;
+          top: 50%;
+          transform: translateY(-50%) rotate(0);
+          transition: 300ms;
+        }
+      }
+
+      .sub-nav-container {
+        display: none;
+        padding-left: 2.4rem;
+        padding-top: 1rem;
+        padding-bottom: 2.4rem;
+
+        ul {
+          li {
+            border-top: 0;
+            margin: 0.6rem 0;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+          a {
+            @include primary-typography(get-size("small"), 400, 102.2%);
+            color: get-color("white");
+            font-feature-settings: "clig" off, "liga" off;
+            text-transform: capitalize;
+            padding: 0;
+          }
+        }
+      }
+
+      &.is-open {
+        padding-top: 0;
+        padding-bottom: -0.4rem;
+
+        &>a {
+          &:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &.mobile-footer-nav {
+    @include for-bp("desktop-sm") {
+      display: none;
+    }
+  }
+
+  &.desktop-footer-nav {
+    display: none;
+
+    li {
+      .has-children {
+        cursor: default;
+      }
+      
+      .sub-nav-container {
+        ul {
+          display: block !important;
+          padding: 0;
+          margin-top: 2.4rem;
+
+          li {
+            margin: 0.6rem 0;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            a {
+              @include primary-typography(get-size("regular"), 400, 102.2%);
+              color: get-color("white");
+            }
+          }
+          
+          ul {
+            //display: block;
+          }
+        }
+      }
+    }
+
+    @include for-bp("desktop-sm") {
+      display: block;
+    }
+  }
+
+}

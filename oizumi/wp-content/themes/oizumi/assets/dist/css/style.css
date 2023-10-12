@@ -1,0 +1,1475 @@
+/*
+  Main Styles Entry
+  ----------------
+  This is the main SCSS entry file that imports various SCSS modules required for the project.
+  It includes global variables, responsive design mixins, color definitions, and common styles.
+  Additionally, it imports any 'shame.scss' file, which may contain quick fixes or non-ideal code.
+
+  Note:
+  - This file serves as the entry point for building your project's styles.
+  - Ensure that all required styles are imported and organized appropriately.
+*/
+/*
+Theme Name: Oizumi Theme
+Theme URI:
+Author: Daniel Akio Oizumi
+Description: Theme to show some skills.
+Tags: Oizumi
+Version: 1.1
+Requires at least: 6.2.2
+Tested up to: 6.2.2
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: oizumi
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*
+  Project Variables
+  -----------------
+  This file contains global variables and settings for the project, including file paths,
+  colors, responsive design breakpoints, Z-indexes, measures, time-related settings, and fonts.
+
+  Note:
+  - These variables provide a centralized way to manage project-wide settings.
+  - Adjust as needed to maintain consistency and meet project requirements.
+*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-family: "Dongle";
+  src: local("Dongle Regular"), local("Dongle-Regular"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Dongle/Dongle-Regular.woff2") format("woff2"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Dongle/Dongle-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Dongle";
+  src: local("Dongle Bold"), local("Dongle-Bold"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Dongle/Dongle-Bold.woff2") format("woff2"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Dongle/Dongle-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter Regular"), local("Inter-Regular"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Inter/Inter-Regular.woff2") format("woff2"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Inter/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter SemiBold"), local("Inter-SemiBold"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Inter/Inter-SemiBold.woff2") format("woff2"), url("/wp-content/themes/oizumi/assets/src/assets/fonts/Inter/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/*
+  Global CSS Styles
+  ------------------
+  This CSS file contains styles for the project. It defines the base styles for
+  HTML elements, sets up responsive font sizing, and ensures consistent box sizing
+  for all elements. Additionally, it applies styles to the body, images, objects,
+  iframes, and embeds.
+
+  Styles:
+  - HTML: Base styles for the HTML element.
+  - *: Apply box-sizing: border-box to all elements.
+  - Body: Define font size for the body element.
+  - Images, Objects, Iframes, Embeds: Ensure responsive max-width for media elements.
+
+  Note:
+  - Some styles may depend on pre-defined variables or other parts of the project.
+  - Additional styles specific to components or pages may be defined in separate files.
+*/
+html {
+  font-size: 62.5%;
+  margin: 0;
+  overflow-x: hidden;
+  font-display: swap;
+  font-family: "Dongle", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2.4rem;
+}
+
+img,
+object,
+iframe,
+embed {
+  max-width: 100%;
+}
+
+/*
+  Typography and Text Styles
+  --------------------------
+  This CSS file defines typography and text-related styles for the project. It includes mixins
+  and classes for defining font sizes, font weights, line heights, and other text properties.
+
+  Note:
+  - Some styles may depend on pre-defined variables and mixins.
+  - Additional text styles may be defined in separate files or components.
+*/
+/* Blue Button Styles */
+/* #region Blue Button */
+/* #endregion */
+/* Headline Styles */
+/* #region Headlines */
+/* #endregion */
+/* Paragraph Styles */
+/* #region Paragraphs */
+/* #endregion */
+/*
+  Project Styles
+  --------------
+  This CSS file defines styles for various elements used in the project. It includes
+  mixins for layout and common styling, button styles, text links, tags, and highlights.
+
+  Styles:
+  - Wrapper: Layout mixin for creating centered content with padding.
+  - Buttons: Mixins and classes for creating various types of buttons.
+  - Arrow Button: Styles for arrow buttons with different color variations.
+  - Text Link: Mixin and class for creating text links with hover effects.
+  - Tags: Mixin and class for creating styled tags.
+  - Highlights: Styles for text highlights with different color options.
+
+  Note:
+  - Some styles may depend on pre-defined variables and mixins.
+  - Additional styles specific to components or pages may be defined elsewhere.
+*/
+/* -----------------------------------------------------------------------------
+ * Wrapper
+ * ----------------------------------------------------------------------------- */
+.oizumi-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 9.5rem;
+}
+@media (min-width: 1300px) {
+  .oizumi-wrapper {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
+@media (min-width: 1920px) {
+  .oizumi-wrapper {
+    padding-left: 19.2rem;
+    padding-right: 19.2rem;
+  }
+}
+@media (min-width: 1180px) {
+  .oizumi-wrapper {
+    padding-top: 10.1rem;
+  }
+}
+.oizumi-wrapper.center {
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------------------
+ * Buttons
+ * ----------------------------------------------------------------------------- */
+.btn-blue {
+  font-family: "Dongle", sans-serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 8px;
+  border: 0;
+  width: auto;
+  text-decoration: none;
+  padding: 0px 1.2rem;
+  height: 2.6rem;
+  color: #ffffff;
+  background: #6371F4;
+  white-space: nowrap;
+}
+@media (min-width: 1180px) {
+  .btn-blue {
+    font-family: "Dongle", sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media (min-width: 1180px) {
+  .btn-blue {
+    padding: 0.7rem 3.3rem;
+    height: auto;
+  }
+}
+.btn-blue:hover {
+  color: #ffffff;
+}
+
+/* -----------------------------------------------------------------------------
+ * TEXT LINK
+ * ----------------------------------------------------------------------------- */
+a {
+  text-decoration: none;
+  color: #251F6E;
+}
+a:hover {
+  color: #6371F4;
+}
+
+/* -----------------------------------------------------------------------------
+ * LIST BULLETS
+ * ----------------------------------------------------------------------------- */
+ul {
+  list-style-type: none;
+}
+ul li {
+  position: relative;
+  padding-left: 2.7rem;
+  line-height: 60.8%;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+ul li:before {
+  content: "";
+  background-image: url("/wp-content/themes/oizumi/assets/dist/assets/icons/bullets.svg");
+  background-size: contain;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  transform: translateY(-50%);
+}
+
+/* -----------------------------------------------------------------------------
+ * Homepage Title
+ * ----------------------------------------------------------------------------- */
+body.home article header {
+  display: none;
+}
+
+/* -----------------------------------------------------------------------------
+ * Admin Bar
+ * ----------------------------------------------------------------------------- */
+html #wpadminbar {
+  display: none;
+}
+
+/*
+  Quick and Dirty Stylesheet
+  --------------------------
+  This stylesheet serves as a dedicated space for writing code that may not adhere to
+  the highest coding standards but is necessary to meet project deadlines. It's the
+  code that gets the release out on time but might make you a bit ashamed.
+
+  Use this area sparingly and consider refactoring or cleaning up code when possible.
+
+  "Quick and dirty" solutions are sometimes essential in the world of development.
+*/
+a.skip-main-button {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+a.skip-main-button:focus, a.skip-main-button:active {
+  color: black;
+  background-color: white;
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 4px solid black;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
+}
+
+header.oizumi-header {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background: #ffffff;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 1300px) {
+  header.oizumi-header {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
+@media (min-width: 1920px) {
+  header.oizumi-header {
+    padding-left: 19.2rem;
+    padding-right: 19.2rem;
+  }
+}
+header.oizumi-header .header-main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+}
+header.oizumi-header .header-main .header-logo .logo {
+  display: flex;
+  justify-content: center;
+}
+header.oizumi-header .header-main .header-logo .logo .desktop-logo {
+  display: none;
+}
+@media (min-width: 1180px) {
+  header.oizumi-header .header-main .header-logo .logo .mobile-logo {
+    display: none;
+  }
+  header.oizumi-header .header-main .header-logo .logo .desktop-logo {
+    display: block;
+    max-width: 204px;
+  }
+}
+header.oizumi-header .header-main .header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+@media (min-width: 1180px) {
+  header.oizumi-header .header-main .header-buttons {
+    gap: 1.7rem;
+  }
+}
+header.oizumi-header .header-main .header-mobile-button button {
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+header.oizumi-header .header-main .header-mobile-button button .toggle-close {
+  display: none;
+}
+header.oizumi-header .header-main .header-nav {
+  display: none;
+}
+@media (min-width: 1180px) {
+  header.oizumi-header .header-main {
+    display: flex;
+    height: 10.1rem;
+  }
+  header.oizumi-header .header-main .header-logo {
+    order: 1;
+  }
+  header.oizumi-header .header-main .header-buttons {
+    order: 3;
+  }
+  header.oizumi-header .header-main .header-mobile-button {
+    display: none;
+  }
+  header.oizumi-header .header-main .header-nav {
+    order: 2;
+  }
+}
+header.oizumi-header.blurred .header-nav {
+  z-index: -1;
+  background: linear-gradient(105deg, #EDEBF9 2.98%, rgba(255, 255, 255, 0.4) 101.73%);
+  backdrop-filter: blur(8px);
+}
+@media (min-width: 1180px) {
+  header.oizumi-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 10.1rem;
+  }
+}
+
+nav.header-nav {
+  padding: 2.4rem 1.6rem;
+  grid-column: 1/span 3;
+  width: 100%;
+  height: calc(100% - 9.5rem);
+  position: fixed;
+  left: 0;
+  top: 9.5rem;
+  overflow-y: scroll;
+}
+nav.header-nav .header-nav-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+nav.header-nav .header-nav-wrapper ul li {
+  padding-left: 0;
+  margin: 0;
+  border-top: 0.1rem solid rgba(99, 113, 244, 0.4);
+}
+nav.header-nav .header-nav-wrapper ul li:first-of-type {
+  border-top: 0;
+}
+nav.header-nav .header-nav-wrapper ul li a {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: block;
+  padding: 0.8rem 0;
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper ul li a {
+    font-family: "Dongle", sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+nav.header-nav .header-nav-wrapper ul li:before {
+  display: none;
+}
+nav.header-nav .header-nav-wrapper ul li.is-active a {
+  color: #6371F4;
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper ul li {
+    display: inline-block;
+    border-top: 0;
+    padding: 0 0.4rem;
+  }
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper > ul > li {
+    border-bottom: 0.3rem solid transparent;
+  }
+  nav.header-nav .header-nav-wrapper > ul > li a {
+    padding-right: 3.6rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  nav.header-nav .header-nav-wrapper > ul > li:hover {
+    border-bottom: 0.3rem solid #6371F4;
+  }
+  nav.header-nav .header-nav-wrapper > ul > li.is-active {
+    border-bottom: 0.3rem solid #6371F4;
+  }
+}
+nav.header-nav .header-nav-wrapper.can-toggle li .has-children {
+  position: relative;
+}
+nav.header-nav .header-nav-wrapper.can-toggle li .has-children:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  background: url("/wp-content/themes/oizumi/assets/dist/assets/icons/chevron_down.svg");
+  background-size: cover;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0);
+  transition: 100ms;
+}
+nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container {
+  display: none;
+  padding-left: 2.4rem;
+  padding-bottom: 1.8rem;
+}
+nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container ul li {
+  border-top: 0;
+}
+nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container ul a {
+  font-family: "Dongle", sans-serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0;
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container ul a {
+    font-family: "Dongle", sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container ul {
+    display: flex;
+    gap: 1.7rem;
+  }
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper.can-toggle li .sub-nav-container {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(105deg, #EDEBF9 2.98%, rgba(255, 255, 255, 0.4) 101.73%);
+    backdrop-filter: blur(8px);
+    top: 10.1rem;
+    padding: 0 10.1rem 2.4rem 10.1rem;
+  }
+}
+nav.header-nav .header-nav-wrapper.can-toggle li.is-open > a {
+  color: #6371F4;
+}
+nav.header-nav .header-nav-wrapper.can-toggle li.is-open > a:after {
+  transform: rotate(180deg);
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper.can-toggle li.is-open .sub-nav-container {
+    opacity: 1;
+  }
+}
+@media (min-width: 1180px) {
+  nav.header-nav .header-nav-wrapper.can-toggle li.is-open {
+    position: static;
+  }
+}
+@media (min-width: 1180px) {
+  nav.header-nav {
+    padding: 0 1.7rem;
+    height: auto;
+    position: initial;
+    overflow-y: initial;
+    display: flex !important;
+    justify-content: end;
+    gap: 1.7rem;
+  }
+}
+
+footer.oizumi-footer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  margin-top: 6.8rem;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+}
+@media (min-width: 1300px) {
+  footer.oizumi-footer {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
+@media (min-width: 1920px) {
+  footer.oizumi-footer {
+    padding-left: 19.2rem;
+    padding-right: 19.2rem;
+  }
+}
+footer.oizumi-footer .footer-nav {
+  width: 100%;
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-nav {
+    order: 1;
+  }
+}
+footer.oizumi-footer .footer-content {
+  font-family: "Dongle", sans-serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.333%;
+  color: #ffffff;
+  font-feature-settings: "clig" off, "liga" off;
+  text-transform: capitalize;
+}
+footer.oizumi-footer .footer-content p {
+  margin: 0;
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-content {
+    font-family: "Dongle", sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    order: 3;
+  }
+}
+footer.oizumi-footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  align-self: stretch;
+  align-items: center;
+  margin: 0;
+}
+footer.oizumi-footer .footer-social .social-icon {
+  line-height: 0%;
+}
+footer.oizumi-footer .footer-social .social-icon a {
+  line-height: 0%;
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-social {
+    order: 2;
+  }
+}
+footer.oizumi-footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  align-self: stretch;
+  margin-bottom: 6.2rem;
+}
+footer.oizumi-footer .footer-links ul {
+  margin: 0;
+  padding: 0;
+}
+footer.oizumi-footer .footer-links ul li {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 0;
+  margin-top: 1.2rem;
+}
+footer.oizumi-footer .footer-links ul li a {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 102.2%;
+  color: #8A94F7;
+  font-feature-settings: "clig" off, "liga" off;
+  text-transform: capitalize;
+}
+footer.oizumi-footer .footer-links ul li:first-of-type {
+  margin-top: 0;
+}
+footer.oizumi-footer .footer-links ul li:before {
+  display: none;
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-links ul li {
+    line-height: auto;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3.6rem;
+  }
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer .footer-links {
+    order: 4;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1180px) {
+  footer.oizumi-footer {
+    gap: 4.8rem;
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    margin-top: 12.9rem;
+  }
+}
+
+nav.footer-nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav.footer-nav ul li {
+  padding-left: 0;
+  margin: 0.4rem 0;
+}
+nav.footer-nav ul li a {
+  font-family: "Dongle", sans-serif;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 102.2%;
+  display: block;
+  color: #8A94F7;
+  font-feature-settings: "clig" off, "liga" off;
+  text-transform: capitalize;
+}
+@media (min-width: 1180px) {
+  nav.footer-nav ul li a {
+    font-family: "Dongle", sans-serif;
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 102.2%;
+  }
+}
+nav.footer-nav ul li:first-of-type {
+  margin-top: 0;
+}
+nav.footer-nav ul li:last-of-type {
+  margin-bottom: 0;
+}
+nav.footer-nav ul li:before {
+  display: none;
+}
+@media (min-width: 1180px) {
+  nav.footer-nav ul li {
+    margin: 0;
+  }
+}
+@media (min-width: 1180px) {
+  nav.footer-nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+nav.footer-nav.can-toggle li .has-children {
+  position: relative;
+}
+nav.footer-nav.can-toggle li .has-children:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  background: url("/wp-content/themes/oizumi/assets/dist/assets/icons/chevron_down.svg");
+  background-size: cover;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0);
+  transition: 300ms;
+}
+nav.footer-nav.can-toggle li .sub-nav-container {
+  display: none;
+  padding-left: 2.4rem;
+  padding-top: 1rem;
+  padding-bottom: 2.4rem;
+}
+nav.footer-nav.can-toggle li .sub-nav-container ul li {
+  border-top: 0;
+  margin: 0.6rem 0;
+}
+nav.footer-nav.can-toggle li .sub-nav-container ul li:first-of-type {
+  margin-top: 0;
+}
+nav.footer-nav.can-toggle li .sub-nav-container ul li:last-of-type {
+  margin-bottom: 0;
+}
+nav.footer-nav.can-toggle li .sub-nav-container ul a {
+  font-family: "Dongle", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 102.2%;
+  color: #ffffff;
+  font-feature-settings: "clig" off, "liga" off;
+  text-transform: capitalize;
+  padding: 0;
+}
+nav.footer-nav.can-toggle li.is-open {
+  padding-top: 0;
+  padding-bottom: -0.4rem;
+}
+nav.footer-nav.can-toggle li.is-open > a:after {
+  transform: rotate(180deg);
+}
+@media (min-width: 1180px) {
+  nav.footer-nav.mobile-footer-nav {
+    display: none;
+  }
+}
+nav.footer-nav.desktop-footer-nav {
+  display: none;
+}
+nav.footer-nav.desktop-footer-nav li .has-children {
+  cursor: default;
+}
+nav.footer-nav.desktop-footer-nav li .sub-nav-container ul {
+  display: block !important;
+  padding: 0;
+  margin-top: 2.4rem;
+}
+nav.footer-nav.desktop-footer-nav li .sub-nav-container ul li {
+  margin: 0.6rem 0;
+}
+nav.footer-nav.desktop-footer-nav li .sub-nav-container ul li:first-of-type {
+  margin-top: 0;
+}
+nav.footer-nav.desktop-footer-nav li .sub-nav-container ul li:last-of-type {
+  margin-bottom: 0;
+}
+nav.footer-nav.desktop-footer-nav li .sub-nav-container ul li a {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 102.2%;
+  color: #ffffff;
+}
+@media (min-width: 1180px) {
+  nav.footer-nav.desktop-footer-nav {
+    display: block;
+  }
+}
+
+.home .oizumi-hero-block {
+  margin-bottom: 0;
+}
+@media (min-width: 782px) {
+  .home .oizumi-hero-block .oizumi-hero-block-1 {
+    max-width: 32%;
+    padding-top: 3rem;
+  }
+}
+@media (min-width: 1180px) {
+  .home .oizumi-hero-block .oizumi-hero-block-1 {
+    max-width: 32%;
+    padding-top: 16rem;
+  }
+}
+@media (min-width: 1300px) {
+  .home .oizumi-hero-block .oizumi-hero-block-1 {
+    max-width: 32%;
+    padding-top: 15rem;
+  }
+}
+@media (min-width: 1920px) {
+  .home .oizumi-hero-block .oizumi-hero-block-1 {
+    max-width: 32%;
+    padding-top: 22.7rem;
+  }
+}
+.home .oizumi-hero-block .oizumi-hero-heading {
+  font-family: "Dongle", sans-serif;
+  font-size: 4.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  color: #251F6E;
+  margin-top: 2.4rem;
+  margin-bottom: 0;
+}
+@media (min-width: 1180px) {
+  .home .oizumi-hero-block .oizumi-hero-heading {
+    font-family: "Dongle", sans-serif;
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80%;
+    margin: 0;
+  }
+}
+.home .oizumi-hero-block p {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  color: #848484;
+  margin: 2.8rem 0;
+  max-width: 33.4rem;
+}
+@media (min-width: 1180px) {
+  .home .oizumi-hero-block p {
+    font-family: "Dongle", sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 112.5%;
+    max-width: 100%;
+  }
+}
+.home .oizumi-hero-block ul {
+  padding-left: 0;
+  margin: 0;
+}
+.home .oizumi-hero-block ul li {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60.8%;
+  color: #797979;
+  margin: 2.4rem 0;
+}
+.home .oizumi-hero-block ul li:last-of-type {
+  margin-bottom: 0;
+}
+@media (min-width: 1180px) {
+  .home .oizumi-hero-block ul li {
+    font-family: "Dongle", sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60.8%;
+  }
+}
+.home .oizumi-hero-block figure img {
+  width: 100%;
+}
+.home .oizumi-hero-block figure.mobile-image {
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+  margin-top: -22px;
+}
+.home .oizumi-hero-block figure.desktop-image {
+  display: none;
+}
+@media (min-width: 782px) {
+  .home .oizumi-hero-block figure.mobile-image {
+    display: none;
+  }
+  .home .oizumi-hero-block figure.desktop-image {
+    display: block;
+    margin-left: -128px;
+  }
+}
+
+.home .oizumi-block-heading h2 {
+  font-family: "Dongle", sans-serif;
+  font-size: 4.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  color: #251F6E;
+  margin: 9.7rem 0 0 0;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-heading h2 {
+    font-family: "Dongle", sans-serif;
+    font-size: 9.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60.8%;
+    text-align: center;
+    margin-top: -7rem;
+  }
+  .home .oizumi-block-heading h2 span {
+    display: block;
+  }
+}
+
+.home .oizumi_paragraph {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  color: #848484;
+  margin: 2.4rem 0;
+  height: 12.3rem;
+}
+@media (min-width: 782px) {
+  .home .oizumi_paragraph {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 4.8rem auto;
+    width: 75.8rem;
+    height: auto;
+    text-align: center;
+  }
+}
+
+.home .oizumi-block-carousel {
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide {
+  padding: 2.4rem;
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide figure {
+  height: 23.6rem;
+  position: relative;
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide figure img {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide figure {
+    height: 25.8rem;
+  }
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide h3 {
+  font-family: "Dongle", sans-serif;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60.8%;
+  color: #251F6E;
+  margin: 2.4rem 0;
+  text-align: center;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide h3 {
+    font-family: "Dongle", sans-serif;
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60.8%;
+  }
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #474747;
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-0 p {
+  margin: 0 -0.6rem;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-0 {
+    max-width: 35rem;
+  }
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-0 p {
+    width: 100%;
+    max-width: 270px;
+    margin: auto;
+  }
+}
+.home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-1 {
+  border-radius: 24px;
+  border: 4px solid #6371F4;
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-1 {
+    max-width: 35rem;
+  }
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-1 p {
+    width: 100%;
+    max-width: 286px;
+    margin: auto;
+  }
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-2 {
+    max-width: 35rem;
+  }
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide.order-2 p {
+    width: 100%;
+    max-width: 292px;
+    margin: auto;
+  }
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel .swiper-wrapper .swiper-slide {
+    padding: 3.2rem;
+  }
+}
+@media (min-width: 1180px) {
+  .home .oizumi-block-carousel .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 0;
+  }
+}
+@media (min-width: 1920px) {
+  .home .oizumi-block-carousel .swiper-wrapper {
+    gap: 155px;
+  }
+}
+@media (min-width: 782px) {
+  .home .oizumi-block-carousel {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
