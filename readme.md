@@ -14,13 +14,14 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
     Open your terminal, navigate to the project directory, and run the following command to start the Docker Compose environment:
     
     ```bash
-    docker-compose up
+    docker-compose up -d
     ```
 
 3. **Wait for Containers to Start**
     Docker Compose will pull the necessary images and start the containers. Wait a minute or two for the process to complete.
 
 4. **Import WordPress Database**
+    Docker Compose should import the database when running ```docker-compose up -d``` but in case it doesn't please proceed.
     a. Open a new terminal, and access the WordPress container by running the following command:
     
     ```bash
@@ -52,6 +53,13 @@ This is a WordPress website sample created using the Gulp toolkit, SASS, JavaScr
 ## Fix White Page
 
 If the site does not present any content, please make sure that the oizumi theme and ACF are activated.
+
+If that still not working, please go to ```oizumi/wp-content/themes/oizumi/assets``` and run
+```bash
+npm install 18
+npm install gulp
+gulp
+```
 
 ## Fix Permission Error
 
