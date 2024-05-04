@@ -18,7 +18,7 @@ services:
     expose:
       - 3306
       - 33060
-  wordpress:
+  oizumi:
     image: wordpress:php8.1
     volumes:
       - ./oizumi:/var/www/html
