@@ -1275,6 +1275,9 @@ nav.footer-nav.desktop-footer-nav li .sub-nav-container ul li a {
 .home .oizumi-hero-block figure img {
   width: 100%;
 }
+.home .oizumi-hero-block figure figcaption {
+  display: none;
+}
 .home .oizumi-hero-block figure.mobile-image {
   margin-left: -1.6rem;
   margin-right: -1.6rem;

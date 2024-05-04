@@ -74,6 +74,10 @@
         width: 100%;
       }
 
+      figcaption {
+        display: none;
+      }
+
       &.mobile-image {
         margin-left: -$mobile-bleed;
         margin-right: -$mobile-bleed;
